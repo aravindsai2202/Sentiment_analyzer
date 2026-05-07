@@ -146,11 +146,12 @@ user_input = st.text_area(
 # ---------------------------------------------------
 stop_words = set(stopwords.words('english'))
 
+# correct
 def clean_text(text):
     text = text.lower()
-    text = re.sub(r'[^a-z\s]', '', text)         # remove numbers & symbols
-    text = re.sub(r'\s+', ' ', text).strip()      # remove extra spaces
-    words = [w for w in text.split() if w not in stop_words and len(w) > 2]  # remove stopwords
+    text = re.sub(r'[^a-z\s]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    words = [w for w in text.split() if w not in stop_words and len(w) > 2]
     return ' '.join(words)
 
 # ---------------------------------------------------
